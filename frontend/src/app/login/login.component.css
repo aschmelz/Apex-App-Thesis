@@ -1,0 +1,26 @@
+.container {
+    box-shadow: 0 0 10px 2px gray;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background: linear-gradient(to bottom, #f0f0f0 0%, #e0e0e0 100%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: perspective(100px);
+}
+
+.registerBtn {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23), 0 3px 6px rgba(0, 0, 0, 0.23);
+    margin-right: 0.5%;
+}
+
+mat-label {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.mat-form-field {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 -1px 2px rgba(255, 255, 255, 0.8);
+}

@@ -1,0 +1,47 @@
+<div class="registration-container">
+    <img class="loginPic" src="../../assets/images/key.png" alt="" width="72" height="72">
+    <form class="registration-form">
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>First Name</mat-label>
+            <input name="firstName" placeholder="First Name" matInput [(ngModel)]="firstName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input name="lastName" placeholder="Last Name" matInput [(ngModel)]="lastName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Company Name</mat-label>
+            <input name="companyName" placeholder="Company Name" matInput [(ngModel)]="companyName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Company Address</mat-label>
+            <input name="companyAddress" placeholder="Company Address" matInput [(ngModel)]="companyAddress">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Phone Number</mat-label>
+            <input name="phoneNumber" placeholder="Phone Number" matInput [(ngModel)]="phoneNumber">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Email</mat-label>
+            <input name="email" placeholder="Input Email" matInput [(ngModel)]="email" type="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Password</mat-label>
+            <input class="passwordInput" type="password" placeholder="Input Password" matInput
+                [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <button class="register-btn" type="button" (click)="userRegister()" mat-raised-button color="primary">Register
+            Account</button>
+    </form>
+</div>

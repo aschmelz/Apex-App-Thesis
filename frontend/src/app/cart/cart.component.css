@@ -1,0 +1,37 @@
+.productTable {
+  width: 80%;
+}
+
+.container_main {
+  background-color: white;
+}
+
+.quantity {
+  margin-right: 5%;
+}
+
+.items {
+  text-align: center;
+}
+
+.totalsDiv {
+  text-align: center;
+}
+
+.checkoutBtn {
+  margin-bottom: 1%;
+}
+
+/* Increased specificity for media query styles */
+@media only screen and (max-width: 768px) {
+  .mat-cell .items {
+    /* Target .items within .mat-cell */
+    display: flex;
+  }
+
+  .mat-cell .items button {
+    margin-right: 5px;
+    /* Adjust margin as needed */
+    /* Consider adjusting button width/font size if needed */
+  }
+}

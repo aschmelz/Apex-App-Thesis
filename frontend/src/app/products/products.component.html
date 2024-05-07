@@ -1,0 +1,72 @@
+<div class="container">
+  <h2 *ngIf="loggedVisible"> Welcome, {{ currentUserName }}</h2>
+
+  <form class="add" *ngIf="visible" class="form-inline addProduct">
+    <!-- Name Input -->
+    <mat-form-field class="input-width npb">
+      <mat-label>Product</mat-label>
+      <input #name class="addProductInput" placeholder="Add product" matInput>
+    </mat-form-field>
+
+    <!-- Price Input -->
+    <mat-form-field floatLabel="always" class="input-width npb">
+      <mat-label>Price</mat-label>
+      <input #price class="addPriceInput" type="number" placeholder="0" placeholder="Add Price" matInput>
+      <span matTextPrefix>$&nbsp;</span>
+    </mat-form-field>
+
+    <!-- Brand Input -->
+    <mat-form-field class="input-width npb">
+      <mat-label>Brand</mat-label>
+      <input #brand class="addBrandInput" placeholder="Add Brand" matInput>
+    </mat-form-field>
+
+    <!-- Description Input -->
+    <mat-form-field class="input-width npb">
+      <mat-label>Add Description</mat-label>
+      <textarea matInput #description class="addDescriptionInput" placeholder="Add Description"></textarea>
+    </mat-form-field>
+    <button class="addProductBtn" type="btn" (click)="addItem(name.value, price.value, brand.value, description.value)"
+      mat-raised-button color="primary">Add Product</button>
+  </form>
+
+  <!-- Search Item -->
+  <form class="form-inline search">
+    <mat-form-field class="search-width">
+      <mat-label>Search Here</mat-label>
+      <input [(ngModel)]="searchTerm" (input)="filterItems(searchTerm)" matInput placeholder="Search Product">
+    </mat-form-field>
+    <button (click)="filterItems(searchTerm)" type="button" class="searchBtn" mat-raised-button
+      color="primary">Search</button>
+  </form>
+
+  <!-- Product Grid Layout -->
+  <div class="container_table">
+    <mat-grid-list cols="5" rowHeight="5:7">
+      <mat-grid-tile *ngFor="let product of apiResponse">
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title>{{ product.name }}</mat-card-title>
+            <mat-card-subtitle>{{ product.brand }}</mat-card-subtitle>
+          </mat-card-header>
+          <img class="image" mat-card-image src="../../assets/images/Logo.jpeg"
+            alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <b>Price: {{ product.price | currency}}</b>
+            <p *ngIf="product.description">
+              <b>Description:</b> {{ product.description }}
+            </p>
+            <mat-card-actions>
+              <button mat-raised-button color="primary" (click)="addProduct(product)" type="button"
+                class="bottomBtn">Add to Cart</button>
+              <button mat-raised-button color="warn" (click)="deleteProduct(product._id)" type="button"
+                *ngIf="currentUserRole ==='admin'" class="bottomBtn">Delete</button>
+              <button mat-raised-button color="accent" (click)="editProduct(product._id)" type="button"
+                *ngIf="currentUserRole ==='admin'" class="bottomBtn">Edit</button>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

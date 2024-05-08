@@ -28,11 +28,6 @@
   margin-right: 0.25%;
 }
 
-.addProductBtn {
-  width: auto;
-  height: auto;
-}
-
 /* For material grid/tile */
 mat-grid-tile {
   background: white;
@@ -42,6 +37,7 @@ mat-grid-tile {
   max-width: 100%;
   height: 102%;
   overflow: auto;
+  margin-right: 1%;
 }
 
 mat-card-header {
@@ -52,3 +48,6 @@ mat-card-content {
   background-color: lightblue;
 }
 
+.bottomBtn {
+  margin-right: 1%;
+}

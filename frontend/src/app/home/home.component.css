@@ -1,10 +1,12 @@
 .container {
-    text-align: center; /* Center text horizontally */
+    text-align: center;
+    /* Center text horizontally */
     background-color: white;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally */
+    align-items: center;
+    /* Center items horizontally */
 }
 
 .apex_pic {
@@ -22,18 +24,21 @@
     text-align: center;
 }
 
-.halfLogoLeft, .halfLogoRight {
+.halfLogoLeft,
+.halfLogoRight {
     width: 50%;
     box-sizing: border-box;
     display: inline-block;
-    text-align: center; /* Align them at the top */
+    text-align: center;
+    /* Align them at the top */
 }
 
 .halfLogoRight {
     float: right;
 }
 
-.textLeft, .textRight {
+.textLeft,
+.textRight {
     width: 50%;
     color: black;
     box-sizing: border-box;
@@ -42,8 +47,47 @@
     text-align: left;
 }
 
-.container_moen::after, .container_navien::after {
+.container_moen::after,
+.container_navien::after {
     content: "";
     display: table;
     clear: both;
+}
+
+.scrolling-container {
+    width: 25%; /* Adjust to fit the available width */
+    overflow-x: hidden; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Add smooth scrolling behavior */
+    white-space: nowrap; /* Prevent items from wrapping */
+}
+
+.scrolling-list {
+    display: inline-flex; /* Display items in a row */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+}
+
+.arrow {
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+.left-arrow:disabled {
+    opacity: 0.2;
+    cursor: default;
+}
+
+.diff {
+    width: 450px; /* Adjust width of each item */
+    height: auto; /* Ensure height adjusts automatically */
+    margin: 0 10px; /* Add margin between items */
+}
+
+.right-arrow {
+    margin-bottom: 1%;
 }

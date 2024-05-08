@@ -28,6 +28,8 @@ import { LoginComponent } from './login/login.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CartComponent } from './cart/cart.component';
 import { InvoiceComponent } from './cart/invoice/invoice.component';
+import { MatRadioModule } from '@angular/material/radio';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { InvoiceComponent } from './cart/invoice/invoice.component';
     MatPaginatorModule,
     MatCardModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

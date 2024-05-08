@@ -58,7 +58,7 @@ export class CartComponent implements OnInit {
           if (this.oldList[i]._id === data.cart[j]._id) {
             data.cart[j].name = this.oldList[i].name;
             data.cart[j].price = this.oldList[i].price;
-          } else if (!this.oldList.some((oldItem: { _id: any; }) => oldItem._id === data.cart[j]._id)) {
+          } else if (!this.oldList.some((oldItem: { _id: any; }) => oldItem._id === data.cart[j]._id)) {  // deletes user's cart item to correct info when admin removes an item from products
             data.cart.splice(j, 1);
           }
         }

@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';    // Must import OnInit to have before page load
+import { Component, OnInit } from '@angular/core';    // Must import OnInit to have before page load
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({

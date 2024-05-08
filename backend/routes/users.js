@@ -32,10 +32,16 @@ router.get("/get/:id", (req, res) => {
 
 // To ADD a user
 router.post("/register", (req, res) => {
+    const isAdmin = req.body.isAdmin || false;
+    
     User.findOne({ email: req.body.email }).then((result, err) => {
         if (!err) {
             if (!result) {                                                                  // if no matching email exists (result is the email from findOne)
                 let newUser = new User(req.body);
+
+                if (isAdmin === true) {
+                    newUser.role = "admin";
+                }
 
                 // Password validation
                 const passwordRegex = /^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{6,})\S$/; // Example regex: At least 1 digit and 1 letter, minimum length 8

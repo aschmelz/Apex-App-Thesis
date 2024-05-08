@@ -41,6 +41,10 @@
             </button>
         </mat-form-field>
 
+        <mat-radio-group *ngIf="isAdmin" [(ngModel)]="userRole" class="radio-btns">
+            <mat-radio-button *ngFor="let choice of roleOptions" [value]="choice"> {{ choice }} </mat-radio-button>
+        </mat-radio-group>
+
         <button class="register-btn" type="button" (click)="userRegister()" mat-raised-button color="primary">Register
             Account</button>
     </form>

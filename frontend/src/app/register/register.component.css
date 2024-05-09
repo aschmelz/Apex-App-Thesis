@@ -7,9 +7,7 @@
 }
 
 .registration-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Maintain center alignment */
+  align-items: center;
   margin-right: 30%;
   margin-left: 30%;
 }
@@ -26,4 +24,12 @@
 
 .radio-btns {
   text-align: left;
+}
+
+.password-requirements {
+  display: inline-block; /* Display spans as inline-block */
+  color: black; /* Set a light gray color for the requirements text */
+  font-size: 12px; /* Adjust font size */
+  border: 1px solid red; /* Add border */
+  border-radius: 4px; /* Add border radius */
 }

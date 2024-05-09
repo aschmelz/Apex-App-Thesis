@@ -58,7 +58,7 @@ export class ProductsComponent implements OnInit {                              
       alert("Input item name!");
     } if (!priceCost) {             // If not price for the item has been inputted and has a positive value
       alert("Input price!");
-    } else if (priceCost < 0) {
+    } else if (priceCost <= 0) {
       alert("Price must be greater than 0!");
     } else if (this.currentUserRole == "admin") {     // Current user must be an admin
       this.http.post(this.apiUrl, { name: itemName, price: priceCost, brand: brand, description: description }, { headers: this.httpOptions }).subscribe((data: any) => {

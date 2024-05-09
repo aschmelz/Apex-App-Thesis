@@ -31,15 +31,24 @@
             <input name="email" placeholder="Input Email" matInput [(ngModel)]="email" type="email">
         </mat-form-field>
 
-        <mat-form-field appearance="fill" class="full-width">
-            <mat-label>Password</mat-label>
-            <input class="passwordInput" type="password" placeholder="Input Password" matInput
-                [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>
+        <div class="full-width">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Password</mat-label>
+                <input class="passwordInput" type="password" placeholder="Input Password" matInput
+                    [type]="hide ? 'password' : 'text'" [(ngModel)]="password" (keyup)="updatePasswordRequirements()">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <span class="password-requirements">
+                <ng-container *ngIf="showCapital"> * Must include at least one capital letter.</ng-container>
+                <ng-container *ngIf="showLowerCase"> * Must include at least one lowercase letter.</ng-container>
+                <ng-container *ngIf="showSpecialCharacter"> * Must include at least one special character.</ng-container>
+                <ng-container *ngIf="showLength"> * Must be at least 6 characters long.</ng-container>
+            </span>
+        </div>
 
         <mat-radio-group *ngIf="isAdmin" [(ngModel)]="userRole" class="radio-btns">
             <mat-radio-button *ngFor="let choice of roleOptions" [value]="choice"> {{ choice }} </mat-radio-button>
